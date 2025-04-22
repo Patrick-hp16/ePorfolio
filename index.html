@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Moderne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4f46e5',
+            secondary: '#6366f1',
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+  <!-- Navigation responsive -->
+  <header class="fixed top-0 w-full bg-white shadow z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-primary">MonPortfolio</h1>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-primary focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <nav id="menu" class="hidden md:flex space-x-6">
+        <a href="#accueil" class="hover:text-primary">Accueil</a>
+        <a href="#projets" class="hover:text-primary">Projets</a>
+        <a href="#apropos" class="hover:text-primary">À propos</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <a href="#accueil" class="block py-2 text-primary">Accueil</a>
+      <a href="#projets" class="block py-2 text-primary">Projets</a>
+      <a href="#apropos" class="block py-2 text-primary">À propos</a>
+      <a href="#contact" class="block py-2 text-primary">Contact</a>
+    </div>
+  </header>
+
+  <!-- Script menu responsive -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Accueil -->
+  <section id="accueil" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white pt-20">
+    <div class="text-center px-4">
+      <h2 class="text-5xl font-extrabold mb-4">Salut, je suis Patrick Raveloson</h2>
+      <p class="text-xl mb-6">Développeur Web Junior</p>
+      <a href="#projets" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Voir mes projets</a>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section id="projets" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 class="text-4xl font-bold text-center mb-12">Mes Projets</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow hover:shadow-xl p-6 transition">
+          <h4 class="text-2xl font-semibold mb-2">Gestionaire des Salaires</h4>
+          <p class="text-gray-600 mb-4">Application qui calcule les salaires selon les jours, les avances, les primes et plus. </p>
+          <a href="https://patrick-hp16.github.io/Salaire" class="text-primary font-semibold">Voir plus</a>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-xl p-6 transition">
+          <h4 class="text-2xl font-semibold mb-2">Pointage des Employers</h4>
+          <p class="text-gray-600 mb-4">Une application qui verifie l'heure d'entrer et sortie des employers ainsi que leurs durees de travails. Pour la realiser, j'ai utilise les languages : HTML, CSS, JS</p>
+          <a href="https://patrick-hp16.github.io/Pointage" class="text-primary font-semibold">Voir plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="apropos" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h3 class="text-4xl font-bold text-center mb-12">À propos de moi</h3>
+      <div class="max-w-3xl mx-auto text-center text-gray-700">
+        <p class="mb-4">Développeur passionné, je combine mon amour pour la technologie avec une grande curiosité pour les mathématiques et l’électronique. Ma patience m’aide à trouver des solutions efficaces, même face aux bugs les plus tenaces.
+        </p>
+        <p>Expérience avec HTML, CSS, JavaScript, PHP, et plus encore.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 class="text-4xl font-bold text-center mb-12">Contactez-moi</h3>
+  <div class="contact-links">
+    <a href="mailto:araveloson@380@gmail.com" target="_blank">
+      <img src="icons/poster.png" alt="Email"> araveloson380@gmail.com
+    </a>
+    <a href="https://wa.me/+23055364672" target="_blank">
+      <img src="icons/whatsapp.png" alt="WhatsApp"> +23055364672
+    </a>
+    <a href="https://facebook.com/rvelp" target="_blank">
+      <img src="icons/facebook.png" alt="Facebook"> Patrick Karpov
+    </a>
+  </div>
+</section>
+
+  <footer class="bg-white text-center py-6 shadow-inner">
+    <p class="text-gray-600">&copy; 2025 Pratrick Raveloson, Tous droits réservés.</p>
+  </footer>
+
+</body>
+
+<style>
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.contact-links a:hover {
+  transform: scale(1.02);
+}
+
+.contact-links img {
+  width: 24px;
+  height: 24px;
+}
+ #contact{
+  padding: 2em;
+}
+</style>
+</html>
